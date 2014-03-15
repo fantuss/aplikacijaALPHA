@@ -1,5 +1,11 @@
 <h1>Regulatorni znaci!</h1>
 
+<p>
+  Download:
+  <%= link_to "CSV", products_path(format: "csv") %> |
+  <%= link_to "Excel", products_path(format: "xls") %>
+</p>
+
 <table>
   <thead>
     <tr>
@@ -46,6 +52,17 @@
 
 </br></br></br>
 
+
+<h2>Import Products</h2>
+
+<%= form_tag import_products_path, multipart: true do %>
+  <%= file_field_tag :file %>
+  <%= submit_tag "Import" %>
+<% end %>
+
 <%= link_to 'New Product', new_product_path %>
 </br></br>
 <%= link_to "Home", home_path %>
+</br>
+</br>
+<%= link_to_function "Back", "history.back()" %>

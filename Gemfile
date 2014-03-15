@@ -8,6 +8,9 @@ gem 'rails', '4.0.2'
 gem 'mysql'
 gem 'activesupport'
 gem 'activeadmin', github: 'gregbell/active_admin'
+gem 'roo'
+gem 'protected_attributes'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 

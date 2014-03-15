@@ -3,6 +3,10 @@ Video1::Application.routes.draw do
   ActiveAdmin.routes(self)
   resources :products
 
+  resources :products do
+  collection { post :import }
+end
+
   root :to => "home#index"
   get "home" => "home#index"
   
