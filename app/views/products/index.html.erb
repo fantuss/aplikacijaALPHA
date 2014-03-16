@@ -1,3 +1,28 @@
+<script language="javascript">
+/*Dropdown Load from MYSQL INTO RAILS*/
+    $(function(){
+      $('#id').bind('change', function () {
+         var url = "/products/" + $(this).val()
+          if (url) {
+              window.location.replace(url);
+          }
+          return false;
+      });
+    });
+
+/*DISABLED RIGHT CLICK*/
+document.onmousedown=disableclick;
+status="Right Click Disabled";
+Function disableclick(event)
+{
+  if(event.button==2)
+   {
+     alert(status);
+     return false;    
+   }
+}
+</script>
+
 <h1>Regulatorni znaci!</h1>
 
 <p>
@@ -7,7 +32,7 @@
 </p>
 
 <table>
-  <tbody>
+  <tbody oncontextmenu="return false">
     <% @products.each do |product| %>
       <tr class='<%= cycle('list_line_odd', 'list_line_even') %>'>
         <td><%= image_tag(product.image_url, class: 'list_image',
@@ -35,17 +60,7 @@
 
 <%= select_tag 'id',options_from_collection_for_select(@products, "id", "title") %>
 
-<script>
-    $(function(){
-      $('#id').bind('change', function () {
-         var url = "/products/" + $(this).val()
-          if (url) {
-              window.location.replace(url);
-          }
-          return false;
-      });
-    });
-</script>
+
 
 </br></br></br>
 
