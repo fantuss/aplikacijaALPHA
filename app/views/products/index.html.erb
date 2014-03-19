@@ -41,10 +41,10 @@ Function disableclick(event)
         <td class="list_description">
         <dl>
         <dt><%= product. title %></dt>
-        <dd><%= truncate(strip_tags(product.description), length:80) %></dd>
+        <dd><%= truncate(strip_tags(product.category), length:80) %></dd>
         </dl>
         </td>
-        <td><%= product.price %></td>
+        <td><%= product.shape %></td>
         
         <td class="list_actions">
         <%= link_to 'Show', product %>
