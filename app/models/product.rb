@@ -1,6 +1,6 @@
 class Product < ActiveRecord::Base
   #dodao
- attr_accessible :title, :category, :image_url, :shape
+ attr_accessible :title, :category, :image_url, :shape, :code
   
   def self.to_csv(options = {})
     CSV.generate(options) do |csv|
